@@ -1,0 +1,22 @@
+.backgroundImageStyles {
+  align-items: center;
+  background-attachment: fixed;
+  background-image: url(../../assets/images/download.png);
+  background-position: right 0%;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  display: flex;
+  height: 100vh;
+  isolation: isolate;
+  justify-content: flex-start;
+  padding: 0 100px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  /* Styles for small screens */
+  .backgroundImageStyles {
+    padding: 0px 20px;
+    background-size: 100%;
+  }
+}
