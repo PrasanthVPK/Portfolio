@@ -1,0 +1,31 @@
+.form-control {
+  background: #3a3a3a;
+  color: black;
+  box-shadow: unset;
+  margin-bottom: 25px;
+  display: block;
+  width: 100%;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-clip: padding-box;
+  border: unset;
+  border-radius: unset;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control::placeholder {
+  color: black;
+}
+
+.form-control:focus {
+  color: black;
+  background-color: #3a3a3a;
+  border-color: unset;
+  outline: 0;
+  box-shadow: unset;
+}
