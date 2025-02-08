@@ -1,4 +1,5 @@
 import React from "react";
+import './navbar.css'
 import { nav_menu } from "../mock.tsx";
 
 const Navbar = () => {
@@ -6,8 +7,8 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand p-3 text-white" href="#">
-            VP
+          <a className="navbar-brand p-2 text-white" href="#">
+            <h2 className="logoStyles">VP</h2>
           </a>
           <button
             className="navbar-toggler"

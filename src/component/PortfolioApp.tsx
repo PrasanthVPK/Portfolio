@@ -6,6 +6,8 @@ import Experience from "./Experience/Experience.tsx";
 import Contact from "./Contact/Contact.tsx";
 import Project from "./Project/Project.tsx";
 
+document.title = "Portfolio"
+
 const PortfolioApp = () => {
   return (
     <>
@@ -18,9 +20,9 @@ const PortfolioApp = () => {
         <div className="pt-5 pb-5">
           <Experience />
         </div>
-        {/* <div className="pt-5 pb-5">
+        <div className="pt-5 pb-5">
           <Project />
-        </div> */}
+        </div>
         <div className="pt-5 pb-5">
           <Contact />
         </div>

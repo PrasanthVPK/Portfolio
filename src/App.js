@@ -4,7 +4,7 @@ import Experience from "./component/Experience/Experience.tsx";
 import PortfolioApp from "./component/PortfolioApp.tsx";
 import './App.css';
 import './assets/css/style.css';
-import "bootstrap-icons/font/bootstrap-icons.css";
+import Project from "./component/Project/Project.tsx";
 
 function App() {
   return (
@@ -12,6 +12,14 @@ function App() {
       <div className='App-header'>
         <PortfolioApp />
       </div>
+
+      <Router>
+        <div className='App-header'>
+          <Routes>
+            <Route path="/about" element={<Project />} />
+          </Routes>
+        </div>
+      </Router>
     </>
   );
 }

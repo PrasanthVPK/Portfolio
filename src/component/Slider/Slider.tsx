@@ -17,7 +17,7 @@ const Slider = () => {
           <h1>
             I'm <strong>Prasanth Kumar</strong>
           </h1>
-          <h2>A Dedicated Software Engineer</h2>
+          <h2 className="taglineStyles">A Dedicated Software Engineer</h2>
         </div>
       </div>
     </>

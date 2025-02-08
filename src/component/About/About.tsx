@@ -1,24 +1,19 @@
 import React, { useState } from "react";
 import './about.css';
-import { personal_info, skill_info } from "../mock.tsx";
+import { education_info, personal_info, skill_info } from "../mock.tsx";
 
 const About = () => {
   const [isDropdown, setDropdown] = useState({
-    personal: true,
-    contact: false,
+    education: true,
     skill: false,
   });
 
   const handleTogglePersonal = () => {
-    setDropdown({ personal: true, contact: false, skill: false });
-  };
-
-  const handleToggleContact = () => {
-    setDropdown({ personal: false, contact: true, skill: false });
+    setDropdown({ education: true, skill: false });
   };
 
   const handleToggleSkill = () => {
-    setDropdown({ personal: false, contact: false, skill: true });
+    setDropdown({ education: false, skill: true });
   };
 
   return (
@@ -28,14 +23,14 @@ const About = () => {
       >
         <div className="col-lg-5 col-sm-6 d-flex justify-content-center">
           <img
-            src="/assets/images/about_image.jpeg"
+            src="/assets/images/about_image.png"
             alt=""
             className="aboutImageStyles"
           />
         </div>
         <div className="col-lg-6 col-md-6 col-sm-6 mt-4">
           <h1 className="mb-4">About Me</h1>
-          <p className="mb-4 mt-4">
+          <p className="mb-4 mt-4 aboutDescription">
             Motivated and detail-oriented Software Engineer specialising in
             front-end development with React, TypeScript CSS. Passionate about
             building scalable web applications and learning new technologies.
@@ -48,15 +43,7 @@ const About = () => {
                 onClick={() => handleTogglePersonal()}
                 className="nav-link active"
               >
-                Personal Info
-              </div>
-            </li>
-            <li className="nav-item">
-              <div
-                onClick={() => handleToggleContact()}
-                className="nav-link active"
-              >
-                Contact Info
+                Education
               </div>
             </li>
             <li className="nav-item">
@@ -69,27 +56,16 @@ const About = () => {
             </li>
           </ul>
 
-          <div className="mb-4 mt-4">
-            {isDropdown.personal && (
+          <div className="m-3">
+            {isDropdown.education && (
               <>
-                {personal_info.map((value) => (
-                  <ul className="list-unstyled" key={value.id}>
-                    <li>{value.name}</li>
-                    <li>{value.role}</li>
-                  </ul>
-                ))}
-              </>
-            )}
-
-            {isDropdown.contact && (
-              <>
-                {personal_info.map((value) => (
-                  <ul className="list-unstyled" key={value.id}>
-                    <li>{value.contact}</li>
-                    <li>{value.email}</li>
-                    <li>{value.linkedin}</li>
-                  </ul>
-                ))}
+              {education_info.map((value)=>(
+                <div key={value.id}>
+                    <p className="fs-6 m-0">{value.degree}</p>
+                    <p className="fs-6 m-0">{value.college_name}</p>
+                    <p className="fs-6 m-0">{value.year_of_completion}</p>
+                </div>
+              ))}
               </>
             )}
 
@@ -97,7 +73,7 @@ const About = () => {
               <>
                 <ul className="list-unstyled">
                   {skill_info.map((skill, index) => (
-                    <li key={index}>{skill}</li>
+                    <li className="fs-6" key={index}>{skill}</li>
                   ))}
                 </ul>
               </>

@@ -1,7 +1,7 @@
 .backgroundImageStyles {
   align-items: center;
   background-attachment: fixed;
-  background-image: url(../../assets/images/Banner.jpeg);
+  background-image: url(../../assets/images/Banner.png);
   background-position: right 0%;
   background-repeat: no-repeat;
   background-size: 50%;
@@ -11,6 +11,10 @@
   justify-content: flex-start;
   padding: 0 100px;
   position: relative;
+}
+
+.taglineStyles {
+  font-size: 26px;
 }
 
 @media (max-width: 768px) {

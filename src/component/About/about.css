@@ -1,3 +1,19 @@
-.aboutImageStyles{
-    height: 600px
+.aboutImageStyles {
+  height: 450px;
+}
+
+@media only screen and (max-width: 600px) {
+  .aboutImageStyles {
+    height: 400px;
+  }
+
+  .aboutDescription {
+    font-size: 16px !important;
+    line-height: 26px !important;
+  }
+}
+
+.aboutDescription {
+  font-size: 16px;
+  line-height: 22px;
 }
