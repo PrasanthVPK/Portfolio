@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./contact.css";
 import { contact_links } from "../mock.tsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import PopupModal from "../../kit/PopUp/Popup.tsx";
 
 const Contact = () => {
+  const [isResumeView, setResumeView] = useState(false);
+
+  const handleResumeView = () => {
+    setResumeView(!isResumeView);
+  };
+
+  const handleDownload = () => {
+    const fileUrl = "/assets/Prasanth_Kumar_Resume.pdf"; // Correct path
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.setAttribute("download", "Prasanth_Kumar_Resume.pdf"); // Custom filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <div className="d-lg-flex">
@@ -35,8 +52,12 @@ const Contact = () => {
           </div>
 
           <div className="pt-4 pb-4">
-            <button type="submit" className="btn btn-primary">
-              Resume Download
+            <button
+              type="submit"
+              onClick={handleResumeView}
+              className="btn btn-primary"
+            >
+              Resume
             </button>
           </div>
         </div>
@@ -57,6 +78,13 @@ const Contact = () => {
             </button>
           </form>
         </div>
+
+        <PopupModal
+          isOpen={isResumeView}
+          setOpen={handleResumeView}
+        >
+          <iframe src="/assets/Prasanth_Kumar_Resume.pdf"></iframe>
+        </PopupModal>
       </div>
     </>
   );
