@@ -6,24 +6,26 @@ import Experience from "./Experience/Experience.tsx";
 import Contact from "./Contact/Contact.tsx";
 import Project from "./Project/Project.tsx";
 
-document.title = "Portfolio"
+document.title = "Prasanth Kumar V"
 
 const PortfolioApp = () => {
   return (
     <>
-      <div className="container">
+      <div className="">
         <Navbar />
-        <Slider />
-        <div className="pt-5 pb-5">
+        <div className="pt-6 pb-6">
+          <Slider />
+        </div>
+        <div className="container pt-5 pb-5 ps-4 pe-4">
           <About />
         </div>
-        <div className="pt-5 pb-5">
+        <div className="container pt-5 pb-5 ps-4 pe-4">
           <Experience />
         </div>
-        <div className="pt-5 pb-5">
+        <div className="container pt-5 pb-5 ps-4 pe-4">
           <Project />
         </div>
-        <div className="pt-5 pb-5">
+        <div className="container pt-5 pb-5 ps-4 pe-4">
           <Contact />
         </div>
       </div>

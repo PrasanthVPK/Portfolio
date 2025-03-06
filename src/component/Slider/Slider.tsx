@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./slider.css";
 
 const Slider = () => {
-  const bannerStyle = {
-    backgroundImage:
-      "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjzC2JyZDZ_RaWf0qp11K0lcvB6b6kYNMoqtZAQ9hiPZ4cTIOB)", // Replace with your image path
-    backgroundSize: "cover",
-    backgroundPosition: "right", // Align the background image to the right
-    height: "100vh", // You can adjust the height
-    backgroundAttachment: "fixed", // This will keep the image fixed
-  };
+  const [componentHeight, setComponentHeight] = useState(
+    window.innerHeight - 245,
+  );
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      setComponentHeight(window.innerHeight - 245);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <>
-      <div className="backgroundImageStyles sm-backgroundImageStylesSM" style={{ height: window.innerHeight -56 }}>
+      <div className="backgroundImageStyles sm-backgroundImageStylesSM" style={{ height: componentHeight }}>
         <div>
           <h1>
             I'm <strong>Prasanth Kumar</strong>

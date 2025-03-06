@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #111111;
+  background-color: #000000;
 }
 
 .App-link {
@@ -28,4 +28,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.pt-6 {
+  padding-top: 5rem !important;
+}
+.pb-6 {
+  padding-bottom: 5rem !important;
 }

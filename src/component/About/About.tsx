@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './about.css';
-import { education_info, personal_info, skill_info } from "../mock.tsx";
+import { education_info, skill_info } from "../mock.tsx";
 
 const About = () => {
   const [isDropdown, setDropdown] = useState({
@@ -23,7 +23,7 @@ const About = () => {
       >
         <div className="col-lg-5 col-sm-6 d-flex justify-content-center">
           <img
-            src="/assets/images/about_image.png"
+            src="/assets/images/about1.png"
             alt=""
             className="aboutImageStyles"
           />

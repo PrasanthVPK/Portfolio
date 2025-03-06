@@ -3,14 +3,53 @@ import "./contact.css";
 import { contact_links } from "../mock.tsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
-import PopupModal from "../../kit/PopUp/Popup.tsx";
 
 const Contact = () => {
-  const [isResumeView, setResumeView] = useState(false);
 
-  const handleResumeView = () => {
-    setResumeView(!isResumeView);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+  
+    const scriptURL = "https://script.google.com/macros/s/AKfycbx_B0PEUODiGAA5F8zWEyXBYRJYPmUkXmXj3IweET2d0Qe5OQTEOopNUoTKtodcaEFHfg/exec";
+  
+    try {
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+  
+      const result = await response.text();
+      if (result.includes("Success")) {
+        alert("Form submitted successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert("Submission failed: " + result);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred. Check console logs.");
+    } finally {
+      setLoading(false);
+    }
+  };
+  
+
+  
 
   const handleDownload = () => {
     const fileUrl = "/assets/Prasanth_Kumar_Resume.pdf"; // Correct path
@@ -54,7 +93,7 @@ const Contact = () => {
           <div className="pt-4 pb-4">
             <button
               type="submit"
-              onClick={handleResumeView}
+              onClick={handleDownload}
               className="btn btn-primary"
             >
               Resume
@@ -63,28 +102,44 @@ const Contact = () => {
         </div>
 
         <div className="col-lg-6">
-          <form>
-            <div className="form-group">
-              <input placeholder="Your Name" className="form-control" />
-            </div>
-            <div className="form-group">
-              <input placeholder="Your Email" className="form-control" />
-            </div>
-            <div className="form-group">
-              <input placeholder="Write a Message" className="form-control" />
-            </div>
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </form>
+        <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            className="form-control"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
         </div>
-
-        <PopupModal
-          isOpen={isResumeView}
-          setOpen={handleResumeView}
-        >
-          <iframe src="/assets/Prasanth_Kumar_Resume.pdf"></iframe>
-        </PopupModal>
+        <div className="form-group">
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            className="form-control"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <textarea
+            name="message"
+            placeholder="Write a Message"
+            className="form-control"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <button type="submit" className="btn btn-primary" disabled={loading}>
+          {loading ? "Submitting..." : "Submit"}
+        </button>
+      </form>
+        </div>
       </div>
     </>
   );
