@@ -68,6 +68,13 @@ p {
   color: white;
 }
 
+.pt-6 {
+  padding-top: 5rem !important;
+}
+.pb-6 {
+  padding-bottom: 5rem !important;
+}
+
 .fs-6 {
   font-size: 14px !important;
 }
@@ -77,4 +84,10 @@ p {
     font-size: 16px !important;
     line-height: 26px !important;
   }
+}
+
+.my_button {
+  padding: 10px 40px;
+  border: none;
+  background: #657b81bf;
 }

@@ -14,7 +14,7 @@
   appearance: none;
   background-clip: padding-box;
   border: unset;
-  border-radius: unset;
+  border-radius: 15px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -37,4 +37,9 @@
 
 .icon-tags {
   color: white;
+}
+
+textarea {
+  resize: none;
+  height: 200px;
 }

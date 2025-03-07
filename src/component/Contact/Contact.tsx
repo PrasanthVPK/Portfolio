@@ -47,9 +47,6 @@ const Contact = () => {
       setLoading(false);
     }
   };
-  
-
-  
 
   const handleDownload = () => {
     const fileUrl = "/assets/Prasanth_Kumar_Resume.pdf"; // Correct path
@@ -77,7 +74,7 @@ const Contact = () => {
             <p className="ms-3 mb-0">prasanthkumarv02@gmail.com</p>
           </div>
 
-          <div className="d-flex mt-3">
+          <div className="d-flex mt-3 mb-3">
             {contact_links.map((value) => (
               <a
                 key={value.id}
@@ -94,9 +91,9 @@ const Contact = () => {
             <button
               type="submit"
               onClick={handleDownload}
-              className="btn btn-primary"
+              className="my_button"
             >
-              Resume
+              <p className="text-black m-0 p-0F">Resume</p>
             </button>
           </div>
         </div>
@@ -135,8 +132,8 @@ const Contact = () => {
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary" disabled={loading}>
-          {loading ? "Submitting..." : "Submit"}
+        <button type="submit" className="my_button" disabled={loading}>
+          <p className="text-black m-0 p-0">{loading ? "Submitting..." : "Submit"}</p>
         </button>
       </form>
         </div>

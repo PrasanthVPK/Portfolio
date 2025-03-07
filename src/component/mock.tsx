@@ -1,5 +1,10 @@
 import React from "react";
-import { faFacebook, faInstagram, faLinkedin, faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const personal_info = [
@@ -11,7 +16,7 @@ export const personal_info = [
     email: "prasanthkumarv02@gmail.com",
     linkedin: "https://www.linkedin.com/in/prasanth-kumar-v/",
     dob: "18th September 2001",
-    location: "Coimbatore, Tamil Nadu, India"
+    location: "Coimbatore, Tamil Nadu, India",
   },
 ];
 
@@ -29,9 +34,9 @@ export const education_info = [
     id: 1,
     college_name: "PSG Polytechnic College",
     degree: "Diploma in Electronics and Communication Engineering",
-    year_of_completion: "2020"
-  }
-]
+    year_of_completion: "2020",
+  },
+];
 
 export const work_experience = [
   {
@@ -63,26 +68,77 @@ export const work_experience = [
   },
 ];
 
+const handleScrollToHome = () => {
+  setTimeout(() => {
+    const homeElement = document.getElementById("home-section");
+
+    if (homeElement) {
+      homeElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 100); // Small delay to allow DOM updates
+};
+
+const handleScrollToPortfolio = () => {
+  setTimeout(() => {
+    const portfolioElement = document.getElementById("portfolio-section");
+    if (portfolioElement) {
+      portfolioElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 100); // Small delay to allow DOM updates
+};
+
+const handleScrollToAbout = () => {
+  setTimeout(() => {
+    const aboutElement = document.getElementById("about-section");
+    if (aboutElement) {
+      aboutElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 100); // Small delay to allow DOM updates
+};
+
+const handleScrollToExp = () => {
+  setTimeout(() => {
+    const experienceElement = document.getElementById("exp-section");
+
+    if (experienceElement) {
+      experienceElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 100); // Small delay to allow DOM updates
+};
+
+const handleScrollToContact = () => {
+  setTimeout(() => {
+    const contactElement = document.getElementById("contact-section");
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 100); // Small delay to allow DOM updates
+};
+
 export const nav_menu = [
   {
     id: 1,
     nav_name: "Home",
     nav_link: "#",
+    onClick: handleScrollToHome,
   },
   {
     id: 2,
     nav_name: "About",
     nav_link: "#",
+    onClick: handleScrollToAbout,
   },
   {
     id: 3,
     nav_name: "Contact",
     nav_link: "#",
+    onClick: handleScrollToContact,
   },
   {
     id: 4,
     nav_name: "Portfolio",
     nav_link: "#",
+    onClick: handleScrollToPortfolio,
   },
 ];
 
