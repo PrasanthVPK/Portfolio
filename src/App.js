@@ -6,18 +6,35 @@ import './App.css';
 import './assets/css/style.css';
 import Project from "./component/Project/Project.tsx";
 import Contact from "./component/Contact/Contact.tsx";
+import { useEffect } from "react";
 
 function App() {
+
+  useEffect(() => {
+    const setHeight = () => {
+      document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
+    };
+    setHeight();
+    window.addEventListener("resize", setHeight);
+    return () => window.removeEventListener("resize", setHeight);
+  }, []);
+
   return (
     <>
       <div className='App-header'>
         <PortfolioApp />
-{/* 
-        <Router>
+
+        {/* <Router>
           <Routes>
             <Route path="/about" element={
-              <div id="contact-section" className="container pt-5 pb-5 ps-4 pe-4">
-                <Contact />
+              <div className="col-lg-5 col-sm-6 d-flex justify-content-center p-5">
+                <div className="hexagon">
+                  <img
+                    src="/assets/images/about1.png"
+                    alt=""
+                    className="aboutImageStyles"
+                  />
+                </div>
               </div>
             } />
           </Routes>

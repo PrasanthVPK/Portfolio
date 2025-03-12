@@ -3,9 +3,10 @@ import "./contact.css";
 import { contact_links } from "../mock.tsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,38 +15,36 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-  
-    const scriptURL = "https://script.google.com/macros/s/AKfycbx_B0PEUODiGAA5F8zWEyXBYRJYPmUkXmXj3IweET2d0Qe5OQTEOopNUoTKtodcaEFHfg/exec";
-  
+
     try {
-      const response = await fetch(scriptURL, {
+      const response = await fetch("https://formspree.io/f/meoaqnky", {
         method: "POST",
-        body: JSON.stringify(formData),
         headers: {
           "Content-Type": "application/json",
         },
+        body: JSON.stringify(formData),
       });
-  
-      const result = await response.text();
-      if (result.includes("Success")) {
-        alert("Form submitted successfully!");
-        setFormData({ name: "", email: "", message: "" });
+
+      if (response.ok) {
+        toast.success("Your message has been sent successfully!");
+        setFormData({ name: "", email: "", message: "" }); // Reset form
       } else {
-        alert("Submission failed: " + result);
+        toast.error("Failed to send the message. Please try again.");
       }
     } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred. Check console logs.");
-    } finally {
-      setLoading(false);
+      toast.error("Something went wrong. Please try again later.");
     }
+
+    setLoading(false);
   };
 
   const handleDownload = () => {
@@ -60,8 +59,10 @@ const Contact = () => {
 
   return (
     <>
+      <ToastContainer position="top-right" autoClose={3000} />
+      
       <div className="d-lg-flex">
-        <div className="col-lg-6  m-0 mb-4">
+        <div className="col-lg-6 m-0 mb-4">
           <h1>Contact me!</h1>
 
           <div className="d-flex align-items-center p-3">
@@ -81,6 +82,7 @@ const Contact = () => {
                 className="me-3 icon-tags"
                 href={value.link}
                 target="__blank"
+                rel="noopener noreferrer"
               >
                 {value.icon}
               </a>
@@ -89,53 +91,54 @@ const Contact = () => {
 
           <div className="pt-4 pb-4">
             <button
-              type="submit"
+              type="button"
               onClick={handleDownload}
               className="my_button"
             >
-              <p className="text-black m-0 p-0F">Resume</p>
+              <p className="text-black m-0 p-0">Resume</p>
             </button>
           </div>
         </div>
 
         <div className="col-lg-6">
-        <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            className="form-control"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            className="form-control"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <textarea
-            name="message"
-            placeholder="Write a Message"
-            className="form-control"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit" className="my_button" disabled={loading}>
-          <p className="text-black m-0 p-0">{loading ? "Submitting..." : "Submit"}</p>
-        </button>
-      </form>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                className="form-control"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                className="form-control"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <textarea
+                name="message"
+                placeholder="Write a Message"
+                className="form-control"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <button type="submit" className="my_button" disabled={loading}>
+              {loading ? "Sending..." : "Submit"}
+            </button>
+          </form>
         </div>
       </div>
     </>

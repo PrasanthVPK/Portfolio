@@ -4,6 +4,12 @@ import {
   faInstagram,
   faLinkedin,
   faXTwitter,
+  faReact,
+  faJs,
+  faGithub,
+  faCss,
+  faHtml5,
+  faBootstrap,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -21,12 +27,13 @@ export const personal_info = [
 ];
 
 export const skill_info = [
-  "React",
-  "JavaScript",
-  "Git and GitHub",
-  "Redux",
-  "Redux Toolkit",
-  "CSS",
+  <FontAwesomeIcon icon={faReact} style={{ color: "#74C0FC" }} />,
+  <FontAwesomeIcon icon={faJs} style={{ color: "#FFD43B" }} />,
+  <img src="/assets/images/typescript_icon.svg" alt="" width='40' height='40' />,
+  <FontAwesomeIcon icon={faHtml5} style={{ color: "#F06529" }} />,
+  <FontAwesomeIcon icon={faCss} />,
+  <FontAwesomeIcon icon={faGithub} />,
+  <FontAwesomeIcon icon={faBootstrap} style={{ color: "#B197FC" }} />,
 ];
 
 export const education_info = [
@@ -75,7 +82,7 @@ const handleScrollToHome = () => {
     if (homeElement) {
       homeElement.scrollIntoView({ behavior: "smooth" });
     }
-  }, 100); // Small delay to allow DOM updates
+  }, 100);
 };
 
 const handleScrollToPortfolio = () => {
@@ -84,7 +91,7 @@ const handleScrollToPortfolio = () => {
     if (portfolioElement) {
       portfolioElement.scrollIntoView({ behavior: "smooth" });
     }
-  }, 100); // Small delay to allow DOM updates
+  }, 100);
 };
 
 const handleScrollToAbout = () => {
@@ -93,7 +100,7 @@ const handleScrollToAbout = () => {
     if (aboutElement) {
       aboutElement.scrollIntoView({ behavior: "smooth" });
     }
-  }, 100); // Small delay to allow DOM updates
+  }, 100);
 };
 
 const handleScrollToExp = () => {
@@ -103,7 +110,7 @@ const handleScrollToExp = () => {
     if (experienceElement) {
       experienceElement.scrollIntoView({ behavior: "smooth" });
     }
-  }, 100); // Small delay to allow DOM updates
+  }, 100);
 };
 
 const handleScrollToContact = () => {
@@ -112,7 +119,7 @@ const handleScrollToContact = () => {
     if (contactElement) {
       contactElement.scrollIntoView({ behavior: "smooth" });
     }
-  }, 100); // Small delay to allow DOM updates
+  }, 100);
 };
 
 export const nav_menu = [
@@ -130,15 +137,21 @@ export const nav_menu = [
   },
   {
     id: 3,
-    nav_name: "Contact",
+    nav_name: "Experience",
     nav_link: "#",
-    onClick: handleScrollToContact,
+    onClick: handleScrollToExp,
   },
   {
     id: 4,
     nav_name: "Portfolio",
     nav_link: "#",
     onClick: handleScrollToPortfolio,
+  },
+  {
+    id: 5,
+    nav_name: "Contact",
+    nav_link: "#",
+    onClick: handleScrollToContact,
   },
 ];
 

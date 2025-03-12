@@ -64,7 +64,7 @@ li {
 
 p {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 26px;
   color: white;
 }
 
@@ -90,4 +90,31 @@ p {
   padding: 10px 40px;
   border: none;
   background: #657b81bf;
+}
+
+input:-webkit-autofill {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: #3a3a3a !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.containerDiv1 {
+  background-color: #000000 !important;
+  width: 100%;
+  max-width: fit-content;
+}
+
+.containerDiv2 {
+  background-color: #222121 !important;
+  width: 100%;
+  max-width: fit-content;
+}
+
+.p-6 {
+  padding: 5rem !important;
+}
+
+.px-6 {
+  padding: 3rem 6rem !important;
 }

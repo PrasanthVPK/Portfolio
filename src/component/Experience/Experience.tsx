@@ -5,7 +5,7 @@ const Experience = () => {
   return (
     <>
       <div className="">
-        <h1 className="mb-4">Work Experience</h1>
+        <h1 className="mb-4 mt-5">Work Experience</h1>
 
         {work_experience.map((value) => (
           <div key={value.id} className="d-lg-flex mb-5">

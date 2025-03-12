@@ -4,6 +4,11 @@ import { nav_menu } from "../mock.tsx";
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 992); // 992px is the Bootstrap lg breakpoint
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -18,21 +23,43 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary navDiv">
         <div className="container-fluid">
-          <p className="navbar-brand p-2 text-white">
-            <h2 className="logoStyles">VP</h2>
+          <p className="navbar-brand m-0 text-white">
+            <h2 className="logoStyles m-0">
+              <img
+                src="/assets/images/logo.png"
+                alt=""
+                style={{
+                  width: '70px',
+                  height: '70px',
+                }}
+              />
+            </h2>
           </p>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler p-0"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onClick={toggleNavbar}
+            style={{
+              background: '#2C2C2C',
+              borderRadius: '15px',
+            }}
           >
-            <span className="navbar-toggler-icon"></span>
+            <img
+              src="/assets/images/ham_menu.svg"
+              alt=""
+              style={{
+                width: '40px',
+                height: '40px',
+              }}
+              className={`menu-icon ${isOpen ? "rotate-icon" : ""}`}
+            />
           </button>
           <div
             className="collapse navbar-collapse justify-content-lg-end"
@@ -42,7 +69,7 @@ const Navbar = () => {
               {nav_menu.map((value) => (
                 <li key={value.id} className="nav-item text-white">
                   <p
-                    className="nav-link active p-3 text-white"
+                    className="nav-link active p-3 text-white m-0"
                     style={{ cursor: "pointer" }}
                     aria-current="page"
                     onClick={value.onClick}

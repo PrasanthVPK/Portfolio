@@ -3,13 +3,13 @@ import "./slider.css";
 
 const Slider = () => {
   const [componentHeight, setComponentHeight] = useState(
-    window.innerHeight - 245,
+    window.innerHeight - 94,
   );
 
 
   useEffect(() => {
     const handleResize = () => {
-      setComponentHeight(window.innerHeight - 245);
+      setComponentHeight(window.innerHeight - 94);
     };
     window.addEventListener('resize', handleResize);
     return () => {

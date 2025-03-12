@@ -1,5 +1,5 @@
 .form-control {
-  background: #3a3a3a;
+  background: #6b6b6b;
   color: black;
   box-shadow: unset;
   margin-bottom: 25px;
@@ -42,4 +42,10 @@
 textarea {
   resize: none;
   height: 200px;
+}
+
+@media not all and (max-width: 767px) {
+  .full-height {
+    height: var(--vh);
+  }
 }
