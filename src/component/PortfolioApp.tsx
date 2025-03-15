@@ -46,9 +46,9 @@ const PortfolioApp = () => {
         </div>
         <div
           id="exp-section"
-          className={`d-flex flex-column justify-content-center pt-5 pb-5 ${
+          className={`d-flex flex-column justify-content-start pt-5 pb-5 ${
             isMobile ? "px-4" : "px-6"
-          } full-height containerDiv1`}
+          } containerDiv1`}
           style={{ maxWidth: "none" }}
         >
           <Experience />

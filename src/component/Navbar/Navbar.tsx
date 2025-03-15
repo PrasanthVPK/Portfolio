@@ -16,7 +16,7 @@ const Navbar = () => {
           <p className="navbar-brand m-0 text-white">
             <h2 className="logoStyles m-0">
               <img
-                src="/assets/images/logo.png"
+                src="/assets/images/logo.webp"
                 alt=""
                 style={{
                   width: '70px',
