@@ -1,20 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./about.css";
 import { education_info, skill_info } from "../mock.tsx";
 
 const About = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [isDropdown, setDropdown] = useState({
     education: true,
     skill: false,
+    certifi: false,
   });
 
   const handleTogglePersonal = () => {
-    setDropdown({ education: true, skill: false });
+    setDropdown({ education: true, skill: false, certifi: false });
   };
 
   const handleToggleSkill = () => {
-    setDropdown({ education: false, skill: true });
+    setDropdown({ education: false, skill: true, certifi: false });
   };
+
+  const handleToggleCertifi = () => {
+    setDropdown({ education: false, skill: false, certifi: true });
+  };
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
@@ -28,7 +40,7 @@ const About = () => {
             />
           </div>
         </div>
-        <div className="col-lg-6 col-md-6 col-sm-6 mt-4">
+        <div className="col-lg-6 col-md-6 col-sm-6 mt-4 aboutContentHei">
           <h1 className="mb-4">About Me</h1>
           <p className="mb-4 mt-4 aboutDescription">
             A Front-end Developer focus on building scalable, user-friendly, and
@@ -65,6 +77,16 @@ const About = () => {
                 <p className="m-0 p-0">Skills</p>
               </div>
             </li>
+            {/* <li className="nav-item">
+              <div
+                onClick={() => handleToggleCertifi()}
+                className={`nav-link active nav_bar_style ${
+                  isDropdown.certifi && "nav-link_selected"
+                }`}
+              >
+                <p className="m-0 p-0">Certifications</p>
+              </div>
+            </li> */}
           </ul>
 
           <div className="m-3">
@@ -82,7 +104,7 @@ const About = () => {
 
             {isDropdown.skill && (
               <>
-                <ul className="list-unstyled d-flex">
+                <ul className="list-unstyled d-flex flex-wrap">
                   {skill_info.map((skill, index) => (
                     <li
                       className="me-3 d-flex justifiy-content-center align-items-center position-relative"

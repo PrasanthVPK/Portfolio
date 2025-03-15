@@ -22,29 +22,35 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
+    if (
+      formData.name !== "" &&
+      formData.email !== "" &&
+      formData.message !== ""
+    ) {
+      e.preventDefault();
+      setLoading(true);
 
-    try {
-      const response = await fetch("https://formspree.io/f/meoaqnky", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      try {
+        const response = await fetch("https://formspree.io/f/meoaqnky", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
 
-      if (response.ok) {
-        toast.success("Your message has been sent successfully!");
-        setFormData({ name: "", email: "", message: "" }); // Reset form
-      } else {
-        toast.error("Failed to send the message. Please try again.");
+        if (response.ok) {
+          toast.success("Your message has been sent successfully!");
+          setFormData({ name: "", email: "", message: "" }); // Reset form
+        } else {
+          toast.error("Failed to send the message. Please try again.");
+        }
+      } catch (error) {
+        toast.error("Something went wrong. Please try again later.");
       }
-    } catch (error) {
-      toast.error("Something went wrong. Please try again later.");
-    }
 
-    setLoading(false);
+      setLoading(false);
+    }
   };
 
   const handleDownload = () => {
@@ -60,7 +66,7 @@ const Contact = () => {
   return (
     <>
       <ToastContainer position="top-right" autoClose={3000} />
-      
+
       <div className="d-lg-flex">
         <div className="col-lg-6 m-0 mb-4">
           <h1>Contact me!</h1>
@@ -110,7 +116,6 @@ const Contact = () => {
                 className="form-control"
                 value={formData.name}
                 onChange={handleChange}
-                required
               />
             </div>
             <div className="form-group">
@@ -121,7 +126,6 @@ const Contact = () => {
                 className="form-control"
                 value={formData.email}
                 onChange={handleChange}
-                required
               />
             </div>
             <div className="form-group">
@@ -131,7 +135,6 @@ const Contact = () => {
                 className="form-control"
                 value={formData.message}
                 onChange={handleChange}
-                required
               />
             </div>
 

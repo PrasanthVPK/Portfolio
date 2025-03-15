@@ -1,18 +1,15 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import About from "./component/About/About.tsx";
-import Experience from "./component/Experience/Experience.tsx";
-import PortfolioApp from "./component/PortfolioApp.tsx";
-import './App.css';
-import './assets/css/style.css';
-import Project from "./component/Project/Project.tsx";
-import Contact from "./component/Contact/Contact.tsx";
 import { useEffect } from "react";
+import "./App.css";
+import "./assets/css/style.css";
+import PortfolioApp from "./component/PortfolioApp.tsx";
 
 function App() {
-
   useEffect(() => {
     const setHeight = () => {
-      document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
+      document.documentElement.style.setProperty(
+        "--vh",
+        `${window.innerHeight}px`
+      );
     };
     setHeight();
     window.addEventListener("resize", setHeight);
@@ -21,7 +18,7 @@ function App() {
 
   return (
     <>
-      <div className='App-header'>
+      <div className="App-header">
         <PortfolioApp />
 
         {/* <Router>

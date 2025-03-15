@@ -79,6 +79,14 @@ p {
   font-size: 14px !important;
 }
 
+.fs-7 {
+  font-size: 16px !important;
+}
+
+.fs-8 {
+  font-size: 32px !important;
+}
+
 @media only screen and (max-width: 600px) {
   p {
     font-size: 16px !important;
@@ -99,13 +107,13 @@ input:-webkit-autofill {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.containerDiv1 {
+.containerDiv2 {
   background-color: #000000 !important;
   width: 100%;
   max-width: fit-content;
 }
 
-.containerDiv2 {
+.containerDiv1 {
   background-color: #222121 !important;
   width: 100%;
   max-width: fit-content;
@@ -117,4 +125,13 @@ input:-webkit-autofill {
 
 .px-6 {
   padding: 3rem 6rem !important;
+}
+
+.px-7 {
+  padding: 5rem 2rem !important;
+}
+
+.list-styles {
+  color: #c0c0c0;
+  padding: 0rem 1rem;
 }
