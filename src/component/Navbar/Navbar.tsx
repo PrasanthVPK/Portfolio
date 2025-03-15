@@ -3,23 +3,11 @@ import "./navbar.css";
 import { nav_menu } from "../mock";
 
 const Navbar = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 992); // 992px is the Bootstrap lg breakpoint
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 992);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <>

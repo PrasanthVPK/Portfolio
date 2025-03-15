@@ -3,7 +3,6 @@ import "./about.css";
 import { education_info, skill_info } from "../mock";
 
 const About = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [isDropdown, setDropdown] = useState({
     education: true,
     skill: false,
@@ -18,15 +17,9 @@ const About = () => {
     setDropdown({ education: false, skill: true, certifi: false });
   };
 
-  const handleToggleCertifi = () => {
-    setDropdown({ education: false, skill: false, certifi: true });
-  };
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  // const handleToggleCertifi = () => {
+  //   setDropdown({ education: false, skill: false, certifi: true });
+  // };
 
   return (
     <>

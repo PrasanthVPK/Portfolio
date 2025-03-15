@@ -3,14 +3,7 @@ import { project_experience } from "../mock";
 import "./project.css";
 
 const Project = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [isSelectedProject, setSelectedProject] = useState<string | null>("");
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const handleDetails = (name: string) => {
     setSelectedProject(name);
