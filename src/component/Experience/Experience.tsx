@@ -37,6 +37,7 @@ const Experience = () => {
               <img
                 className="card-img-top"
                 src={value.img}
+                alt="Card image cap"
               />
               <div className="card-body">
                 <h5 className="card-title title-styles">{value.role}</h5>

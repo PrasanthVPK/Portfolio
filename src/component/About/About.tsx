@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./about.css";
 import { education_info, skill_info } from "../mock";
 
