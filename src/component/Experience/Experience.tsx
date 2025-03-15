@@ -19,10 +19,6 @@ const Experience = () => {
     setSelectedRole((prevRole: any) => (prevRole === role ? null : role));
   };
 
-  {
-    console.log("selectedRole", selectedRole);
-  }
-
   return (
     <div className="experience-section">
       <h1 className="mb-5 mt-2">Work Experience</h1>
