@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./contact.css";
-import { contact_links } from "../mock.tsx";
+import { contact_links } from "../mock";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer, toast } from "react-toastify";

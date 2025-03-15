@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { project_experience } from "../mock.tsx";
+import { project_experience } from "../mock";
 import "./project.css";
 
 const Project = () => {

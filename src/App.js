@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "./App.css";
 import "./assets/css/style.css";
-import PortfolioApp from "./component/PortfolioApp.tsx";
+import PortfolioApp from "./component/PortfolioApp";
 
 function App() {
   useEffect(() => {

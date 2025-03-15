@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./Navbar/Navbar.tsx";
-import Slider from "./Slider/Slider.tsx";
-import About from "./About/About.tsx";
-import Experience from "./Experience/Experience.tsx";
-import Contact from "./Contact/Contact.tsx";
-import Project from "./Project/Project.tsx";
+import Navbar from "./Navbar/Navbar";
+import Slider from "./Slider/Slider";
+import About from "./About/About";
+import Experience from "./Experience/Experience";
+import Contact from "./Contact/Contact";
+import Project from "./Project/Project";
 
 document.title = "Prasanth Kumar V";
 

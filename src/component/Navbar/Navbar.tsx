@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./navbar.css";
-import { nav_menu } from "../mock.tsx";
+import { nav_menu } from "../mock";
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 992); // 992px is the Bootstrap lg breakpoint

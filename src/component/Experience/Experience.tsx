@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { work_experience } from "../mock.tsx";
+import { work_experience } from "../mock";
 import "./experience.css";
 
 const Experience = () => {
@@ -16,7 +16,7 @@ const Experience = () => {
   }, []);
 
   const handleDetails = (role: string) => {
-    setSelectedRole((prevRole) => (prevRole === role ? null : role));
+    setSelectedRole((prevRole: any) => (prevRole === role ? null : role));
   };
 
   {
