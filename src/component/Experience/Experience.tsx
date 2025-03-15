@@ -28,7 +28,7 @@ const Experience = () => {
           <>
             <div
               key={index}
-              className={`col-lg-3 card me-lg-4 p-3 mb-4 ${
+              className={`align-items-center col-lg-3 card me-lg-4 p-3 mb-4 ${
                 !isMobile && "my_card"
               } ${selectedRole !== "" ? " d-none" : "d-flex"}`}
               data-aos="fade-up"
@@ -36,17 +36,18 @@ const Experience = () => {
             >
               <img
                 className="card-img-top"
+                style={{ width: 100, height: 100, margin: 20 }}
                 src={value.img}
                 alt="Card cap"
               />
-              <div className="card-body">
-                <h5 className="card-title title-styles">{value.role}</h5>
+              <div className="p-0 pt-3 pb-3 card-body">
+                <h5 className="card-title title-styles m-0">{value.role}</h5>
               </div>
-              <ul className="list-styles">
-                <li className="list-group-item">{value.company_name}</li>
-                <li className="list-group-item">{value.location}</li>
-                <li className="list-group-item">{value.duration}</li>
-              </ul>
+              <p className="p-0 m-0 list-group-item list-styles">
+                {value.company_name}
+              </p>
+              <p className="p-0 m-0 list-group-item list-styles">{value.location}</p>
+              <p className="p-0 m-0 list-group-item list-styles">{value.duration}</p>
               <div className="card-body">
                 <button
                   className="my_button"

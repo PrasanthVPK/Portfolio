@@ -57,7 +57,7 @@ export const work_experience = [
     role: "Jr. Software Engineer",
     location: "Coimbatore, Tamil Nadu",
     duration: "Feb 2024 – Present",
-    img: "/assets/images/software.jpg",
+    img: "/assets/images/softwareeng.webp",
     description:
       "Expertise in React, TypeScript, and CSS. Key contributions include developing the AI-powered ZITA Recruiting Web Application, web application revamping, and deployment. Worked on page optimization, module revamping, and content updates, as well as troubleshooting, debugging, and performance optimization. Delivered responsive, user-friendly designs aligned with business objectives.",
   },
@@ -67,7 +67,7 @@ export const work_experience = [
     role: "Front-end Developer",
     location: "Coimbatore, Tamil Nadu",
     duration: "June 2023 – Jan 2024",
-    img: "/assets/images/frontend.jpg",
+    img: "/assets/images/programming.webp",
     description:
       "Trained as Front-end Developer for Web Application Creation in platform of React, TypeScript and CSS. Involved in developing Recruiting Web Application Creation named ZITA with AI.",
   },
@@ -77,7 +77,7 @@ export const work_experience = [
     role: "Apprentice - Process Engineer",
     location: "Coimbatore, Tamil Nadu",
     duration: "Oct 2020 – Nov 2022",
-    img: "/assets/images/electronics.jpg",
+    img: "/assets/images/printed-circuit-board.webp",
     description:
       "Assembly Line Specialist with experience in installing assembly lines for LED backlight modules and instrument clusters. Involved in purchasing SMT machines for PCB assembly, vendor handling, machine panel wiring, and material handling in electronic stores.",
   },
