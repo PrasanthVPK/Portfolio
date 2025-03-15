@@ -1,10 +1,10 @@
 .backgroundImageStyles {
   align-items: center;
   background-attachment: fixed;
-  background-image: url(../../assets/images/slider2.jpg);
-  background-position: 50%;
+  background-image: url(../../assets/images/slider11.jpg);
+  background-position: center 100%;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 1490px;
   display: flex;
   height: 100vh;
   isolation: isolate;
@@ -18,11 +18,12 @@
 }
 
 @media (max-width: 768px) {
+
   /* Styles for small screens */
   .backgroundImageStyles {
     padding: 0px 20px;
     background-size: 860px;
-    background-position: 100%;
+    background-position: 98%;
   }
 }
 

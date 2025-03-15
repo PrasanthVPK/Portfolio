@@ -25,15 +25,8 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
-}
-
-
-.pt-6 {
-  padding-top: 5rem !important;
-}
-.pb-6 {
-  padding-bottom: 5rem !important;
 }

@@ -64,12 +64,27 @@ li {
 
 p {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 26px;
   color: white;
+}
+
+.pt-6 {
+  padding-top: 5rem !important;
+}
+.pb-6 {
+  padding-bottom: 5rem !important;
 }
 
 .fs-6 {
   font-size: 14px !important;
+}
+
+.fs-7 {
+  font-size: 16px !important;
+}
+
+.fs-8 {
+  font-size: 32px !important;
 }
 
 @media only screen and (max-width: 600px) {
@@ -77,4 +92,46 @@ p {
     font-size: 16px !important;
     line-height: 26px !important;
   }
+}
+
+.my_button {
+  padding: 10px 40px;
+  border: none;
+  background: #657b81bf;
+}
+
+input:-webkit-autofill {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: #3a3a3a !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.containerDiv2 {
+  background-color: #000000 !important;
+  width: 100%;
+  max-width: fit-content;
+}
+
+.containerDiv1 {
+  background-color: #222121 !important;
+  width: 100%;
+  max-width: fit-content;
+}
+
+.p-6 {
+  padding: 5rem !important;
+}
+
+.px-6 {
+  padding: 3rem 6rem !important;
+}
+
+.px-7 {
+  padding: 5rem 2rem !important;
+}
+
+.list-styles {
+  color: #c0c0c0;
+  padding: 0rem 1rem;
 }

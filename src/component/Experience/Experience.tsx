@@ -1,27 +1,88 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { work_experience } from "../mock.tsx";
+import "./experience.css";
 
 const Experience = () => {
-  return (
-    <>
-      <div className="">
-        <h1 className="mb-4">Work Experience</h1>
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [selectedRole, setSelectedRole] = useState<any>("");
 
-        {work_experience.map((value) => (
-          <div key={value.id} className="d-lg-flex mb-5">
-            <div className="col-lg-6">
-              <h2>{value.company_name}</h2>
-              <h3>{value.role}</h3>
-              <h5 className="fw-normal">{value.location}</h5>
-              <h6 className="fw-normal">{value.duration}</h6>
+  useEffect(() => {
+    AOS.init({ duration: 600, once: true });
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleDetails = (role: string) => {
+    setSelectedRole((prevRole) => (prevRole === role ? null : role));
+  };
+
+  {
+    console.log("selectedRole", selectedRole);
+  }
+
+  return (
+    <div className="experience-section">
+      <h1 className="mb-5 mt-2">Work Experience</h1>
+
+      <div className="d-lg-flex flex-row justify-content-between mb-2">
+        {work_experience.map((value, index) => (
+          <>
+            <div
+              key={index}
+              className={`col-lg-3 card me-lg-4 p-3 mb-4 ${
+                !isMobile && "my_card"
+              } ${selectedRole !== "" ? " d-none" : "d-flex"}`}
+              data-aos="fade-up"
+              data-aos-delay={index * 200}
+            >
+              <img
+                className="card-img-top"
+                src={value.img}
+                alt="Card image cap"
+              />
+              <div className="card-body">
+                <h5 className="card-title title-styles">{value.role}</h5>
+              </div>
+              <ul className="list-styles">
+                <li className="list-group-item">{value.company_name}</li>
+                <li className="list-group-item">{value.location}</li>
+                <li className="list-group-item">{value.duration}</li>
+              </ul>
+              <div className="card-body">
+                <button
+                  className="my_button"
+                  onClick={() => handleDetails(value.role)}
+                >
+                  Read More...
+                </button>
+              </div>
             </div>
-            <div className="col-lg-6">
-              <p>{value.description}</p>
-            </div>
-          </div>
+
+            {selectedRole === value.role && (
+              <div
+                className="details-container"
+                data-aos="fade-up"
+                data-aos-delay={index * 200}
+              >
+                <h4>{value.company_name}</h4>
+                <h5>{value.role}</h5>
+                <p>{value.duration}</p>
+                <p>{value.description}</p>
+                <button
+                  className="my_button"
+                  onClick={() => setSelectedRole("")}
+                >
+                  Return
+                </button>
+              </div>
+            )}
+          </>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

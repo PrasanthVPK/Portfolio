@@ -1,5 +1,5 @@
 .form-control {
-  background: #3a3a3a;
+  background: #6b6b6b;
   color: black;
   box-shadow: unset;
   margin-bottom: 25px;
@@ -14,12 +14,12 @@
   appearance: none;
   background-clip: padding-box;
   border: unset;
-  border-radius: unset;
+  border-radius: 15px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .form-control::placeholder {
-  color: black;
+  color: #2a2a2a;
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -29,7 +29,7 @@
 
 .form-control:focus {
   color: black;
-  background-color: #3a3a3a;
+  background-color: #6b6b6b;
   border-color: unset;
   outline: 0;
   box-shadow: unset;
@@ -37,4 +37,15 @@
 
 .icon-tags {
   color: white;
+}
+
+textarea {
+  resize: none;
+  height: 200px;
+}
+
+@media not all and (max-width: 767px) {
+  .full-height {
+    height: var(--vh);
+  }
 }

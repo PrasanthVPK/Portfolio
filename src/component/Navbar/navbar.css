@@ -1,3 +1,17 @@
-.logoStyles{
+.logoStyles {
     color: #C7AE6A !important;
+}
+
+.menu-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.rotate-icon {
+    transform: rotate(180deg);
+}
+
+.navDiv{
+    border-bottom: 1px solid #2c2c2c;
 }
