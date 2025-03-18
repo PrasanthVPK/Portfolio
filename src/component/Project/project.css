@@ -12,3 +12,7 @@
     -4px -4px 10px rgba(255, 255, 255, 0.8);
   transform: translateY(-4px);
 }
+
+.project-desc{
+  font-size: 18px;
+}

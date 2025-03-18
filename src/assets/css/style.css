@@ -40,6 +40,7 @@ li,
 div {
   font-family: "Anek Devanagari", sans-serif;
   color: #0e2431;
+  cursor: default;
 }
 
 h1,
@@ -51,11 +52,13 @@ h6 {
   font-family: "Anek Devanagari", sans-serif;
   color: #0e2431;
   font-weight: bold;
+  cursor: default;
 }
 
 li {
   font-size: 16px;
   color: #0e2431;
+  cursor: default;
 }
 
 p {
@@ -63,6 +66,7 @@ p {
   line-height: 26px;
   color: #0e2431;
   font-weight: 500;
+  cursor: default;
 }
 
 .pt-6 {
@@ -88,11 +92,12 @@ p {
   p {
     font-size: 16px !important;
     line-height: 26px !important;
+    cursor: default;
   }
 }
 
 .my-button {
-  padding: 13px 40px 10px 40px;;
+  padding: 13px 40px 10px 40px;
   border: none;
   background: #5171f1;
   color: white;
@@ -113,12 +118,10 @@ input:-webkit-autofill {
 .containerDiv2 {
   background-color: #f8f8f8 !important;
   width: 100%;
-  max-width: fit-content;
 }
 
 .containerDiv1 {
   width: 100%;
-  max-width: fit-content;
 }
 
 .p-6 {
@@ -143,6 +146,6 @@ input:-webkit-autofill {
   height: auto !important;
 }
 
-.text-justify{
+.text-justify {
   text-align: justify;
 }

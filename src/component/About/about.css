@@ -1,19 +1,27 @@
 .aboutImageStyles {
-  height: 340px;
+  height: 300px;
+  border-radius: 50%;
 }
 
-.aboutContentHei{
+.aboutContentHei {
   height: 84vh;
+}
+
+.about-heading {
+  font-size: 32px !important;
+  color: #5171f1;
 }
 
 @media only screen and (max-width: 600px) {
   .aboutImageStyles {
     height: 300px;
+    border-radius: 50%;
   }
 
   .aboutDescription {
     font-size: 16px !important;
     line-height: 26px !important;
+    text-align: justify;
   }
 
   .hexagon {
@@ -22,8 +30,9 @@
 }
 
 .aboutDescription {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 26px;
+  text-align: justify;
 }
 
 .hexagon {

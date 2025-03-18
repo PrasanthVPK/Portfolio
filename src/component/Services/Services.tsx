@@ -6,7 +6,7 @@ const Services = () => {
     <>
       <h2 className="mb-5 text-center service-heading">Services & Expertise</h2>
 
-      <div className="d-flex justify-content-between flex-wrap">
+      <div className="d-flex justify-content-lg-between justify-content-center flex-wrap">
         {service_info.map((values, index) => (
           <div key={index} className="card col-lg-4 justify-content-center p-4">
             <div className="d-flex justify-content-center mb-3">

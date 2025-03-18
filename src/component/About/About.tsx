@@ -3,24 +3,24 @@ import "./about.css";
 const About = () => {
   return (
     <>
+      <h2 className="mb-4 text-center about-heading">
+        About Me
+      </h2>
       <div className="d-lg-flex justify-content-lg-center align-items-lg-center">
         <div
-          className="col-lg-5 col-sm-6 d-flex justify-content-center p-6 photo_height"
-          data-aos="fade-right"
+          className="col-lg-5 d-flex justify-content-center photo_height"
+          // data-aos="fade-right"
         >
-          <div className="hexagon">
+          <div>
             <img
-              src="/assets/images/about1bg.png"
+              src="/assets/images/about_photo.webp"
               alt=""
               className="aboutImageStyles"
             />
           </div>
         </div>
-        <div className="col-lg-6 col-md-6 col-sm-6 mt-4">
-          <h2 className="mb-4" data-aos="fade-left">
-            About Me
-          </h2>
-          <p className="mb-4 mt-4 aboutDescription" data-aos="fade-left">
+        <div className="col-lg-6 mt-4">
+          <p className="mb-4 aboutDescription" data-aos="fade-left">
             A Front-end Developer focus on building scalable, user-friendly, and
             performance-optimized web applications, with expertise in UI
             revamping, developing AI-driven features, API integrations, and

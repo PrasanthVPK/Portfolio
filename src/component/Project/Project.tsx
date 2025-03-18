@@ -19,7 +19,7 @@ const Project = () => {
             <div>
               <h4>{values.project_name}</h4>
               <h5>{values.company_name}</h5>
-              <div>{values.desc1}</div>
+              <div className="text-justify project-desc">{values.desc1}</div>
             </div>
           </div>
         ))}

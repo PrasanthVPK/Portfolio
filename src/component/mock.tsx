@@ -47,8 +47,8 @@ export const skills_info = [
       <img
         src="/assets/images/typescript_icon.svg"
         alt=""
-        width="20"
-        height="20"
+        width="30"
+        height="30"
         style={{ marginBottom: "5px" }}
       />
     ),

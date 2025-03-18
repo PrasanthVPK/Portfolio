@@ -1,5 +1,6 @@
 .experience-heading {
   font-size: 32px !important;
+  color: #5171f1;
 }
 
 .number-div {
@@ -17,4 +18,11 @@
 
 .role-styles {
   color: #5171f1;
+}
+
+.experience-desc {
+  font-size: 18px;
+  line-height: 26px;
+  color: #0e2431;
+  font-weight: 500;
 }

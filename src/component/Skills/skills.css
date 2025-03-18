@@ -1,3 +1,8 @@
+.skill-heading {
+  font-size: 32px !important;
+  color: #5171f1;
+}
+
 .emboss-inner {
   width: 200px;
   height: 50px;
@@ -11,10 +16,10 @@
 }
 
 .skill-text-desc {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 30px;
   color: #000000;
-  text-align: center;
+  text-align: justify;
 }
 
 .skill-icon {
@@ -23,4 +28,30 @@
 
 .skill-name {
   margin: 2px;
+}
+
+.skill-icon-circle {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  border-radius: 50%;
+  right: 146px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 38px;
+  background-color: #f3f3f3;
+}
+
+.skill-text-bar {
+  display: flex;
+  border: 1px solid #e7ebef;
+  width: 200px;
+  padding: 10px 15px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 39px;
+  background-color: #ffffff;
+  box-shadow: rgb(215, 223, 255) -3px 3px 3px 3px;
 }

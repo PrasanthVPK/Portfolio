@@ -36,7 +36,7 @@ const Experience = () => {
               </h4>
               <p className="mb-2 text-center text-lg-start">{value.duration}</p>
 
-              <p className="text-justify">{value.description}</p>
+              <p className="text-justify experience-desc">{value.description}</p>
             </div>
           </div>
         ))}

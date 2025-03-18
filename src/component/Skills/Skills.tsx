@@ -13,7 +13,7 @@ const Skills = () => {
 
   return (
     <>
-      <h2 className="text-center mb-5">My Skills</h2>
+      <h2 className="text-center mb-5 skill-heading">My Skills</h2>
 
       <div className="px-lg-5 mx-lg-5">
         <p className="skill-text-desc" data-aos="fade-up">
@@ -33,12 +33,41 @@ const Skills = () => {
         </p>
       </div>
 
-      <div
+      <div className=" d-flex flex-column flex-lg-row flex-lg-wrap justify-content-center">
+        {skills_info.map((skill, index) => (
+          <div
+            className={`${isMobile && "mb-5"} ${
+              !isMobile && " m-4"
+            } d-flex justify-content-center`}
+            data-aos="fade-up"
+            data-aos-delay={index * 200}
+          >
+            <div
+              key={index}
+              style={{
+                position: "relative",
+                display: "flex",
+                alignItems: "center",
+                width: " fit-content",
+              }}
+            >
+              <div className="skill-icon-circle">{skill.icon}</div>
+              <div className="skill-text-bar">
+                <span style={{ marginLeft: "30px", marginTop: "2px" }}>
+                  {skill.name}
+                </span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* <div
         className={`mt-5 d-flex flex-wrap justify-content-center ${
           isMobile && "justify-content-around"
         }`}
-      >
-        {skills_info.map((skill, index) => (
+      > */}
+      {/* {skills_info.map((skill, index) => (
           <div
             key={index}
             className={`${isMobile && "col-5"} ${
@@ -58,8 +87,9 @@ const Skills = () => {
               </div>
             </div>
           </div>
-        ))}
-      </div>
+        ))} */}
+
+      {/* </div> */}
     </>
   );
 };
