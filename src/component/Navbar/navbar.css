@@ -30,7 +30,7 @@
   width: 100%;
   padding: 20px 0;
   z-index: 998;
-  transition: all 0.3sease;
+  transition: all 0.3s ease;
   font-family: "Ubuntu", sans-serif;
   background-color: white !important;
   transition: background-color 0.5s ease-in-out;
@@ -38,18 +38,19 @@
 
 .nav-link:focus,
 .nav-link:hover {
-  color: #5171F1
+  color: #5171f1;
 }
 
 .sidebarMob {
-  width: 70%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
   height: 100vh;
-  background: #000000;
-  position: absolute;
-  top: 0;
-  right: 0;
-  opacity: 0;
-  transition: all 0.5s ease;
+  width: 350px;
+  background: #5171f1;
+  color: white;
+  opacity: 1;
+  transform: none;
 }
 
 .menu_text_style {
@@ -65,10 +66,18 @@
 }
 
 .mobile_menu_text {
-  color: #c0c0c0;
+  color: white;
+  font-size: 16px !important;
+  font-weight: 700;
 }
 
 .mobile_menu {
   padding: 0;
   list-style-type: none;
+}
+
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: unset;
 }

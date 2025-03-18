@@ -10,7 +10,7 @@ const Project = () => {
         {project_experience.map((values, index) => (
           <div
             key={index}
-            className="col-lg-6 p-4 d-lg-flex bg-white mx-2 project-card"
+            className="col-lg-6 p-4 d-lg-flex bg-white mx-2 mb-5 mb-lg-0 project-card"
           >
             <div className="d-flex align-items-center justify-content-center mx-lg-4 m-0">
               {values.img}

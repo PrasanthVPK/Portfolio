@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { IoIosClose } from "react-icons/io";
 import { nav_menu } from "../mock";
 import "./navbar.css";
 
@@ -7,6 +9,7 @@ const Navbar = () => {
   const [bgCss, setBgCss] = useState("navDiv");
   const [menuTextCss, setmenuTextCss] = useState("menu_text_style");
   const [image, setImage] = useState("logo.webp");
+  const [menu_image, setMenuImage] = useState("menu_icon_white.svg");
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -24,15 +27,15 @@ const Navbar = () => {
       if (window.scrollY > 0) {
         setBgCss("navDiv1");
         setmenuTextCss("menu_text_style1");
-        setImage("logo1.webp");
       } else {
         setBgCss("navDiv");
         setmenuTextCss("menu_text_style");
-        setImage("logo.webp");
       }
       if (window.scrollY > 6) {
         setImage("logo1.webp");
+        setMenuImage("ham_menu.svg");
       } else {
+        setMenuImage("menu_icon_white.svg");
         setImage("logo.webp");
       }
     };
@@ -94,19 +97,16 @@ const Navbar = () => {
             className="navbar-toggler p-0"
             onClick={toggleNavbar}
             style={{
-              // background: "#2C2C2C",
-              // borderRadius: "15px",
               border: "unset",
             }}
           >
             <img
-              src="/assets/images/ham_menu.svg"
+              src={`/assets/images/${menu_image}`}
               alt=""
               style={{
                 width: "40px",
                 height: "40px",
               }}
-              className={`menu-icon ${isOpen ? "rotate-icon" : ""}`}
             />
           </button>
 
@@ -120,46 +120,40 @@ const Navbar = () => {
           </div>
         </div>
 
-        {isOpen && (
-          <div
-            className="sidebarMob"
-            data-aos={isOpen ? "fade-left" : "fade-right"}
-          >
+        <motion.div
+          className="sidebarMob"
+          initial={{ x: "-100%", opacity: 0 }}
+          animate={{ x: isOpen ? "0%" : "-100%", opacity: isOpen ? 1 : 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+        >
+          <div className="d-flex justify-content-end">
             <button
               className="navbar-toggler p-2"
               onClick={toggleNavbar}
-              style={{
-                borderRadius: "15px",
-              }}
+              style={{ border: "unset" }}
             >
-              <img
-                src="/assets/images/cross_icon.svg"
-                alt=""
-                style={{
-                  width: "25px",
-                  height: "25px",
-                }}
-                className={`menu-icon ${isOpen ? "rotate-icon" : ""}`}
+              <IoIosClose
+                style={{ height: "auto", width: "40px", fill: "white" }}
               />
             </button>
-            <ul className="mobile_menu">
-              {nav_menu.map((value) => (
-                <li key={value.id}>
-                  <p
-                    className="mobile_menu_text m-0 p-3 text-center"
-                    aria-current="page"
-                    onClick={() => {
-                      value.onClick();
-                      setIsOpen(false);
-                    }}
-                  >
-                    {value.nav_name}
-                  </p>
-                </li>
-              ))}
-            </ul>
           </div>
-        )}
+          <ul className="mobile_menu">
+            {nav_menu.map((value) => (
+              <li key={value.id}>
+                <p
+                  className="mobile_menu_text m-0 p-3 text-center"
+                  aria-current="page"
+                  onClick={() => {
+                    value.onClick();
+                    setIsOpen(false);
+                  }}
+                >
+                  {value.nav_name}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
       </nav>
     </>
   );
