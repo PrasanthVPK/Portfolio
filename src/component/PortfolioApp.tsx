@@ -7,6 +7,7 @@ import Project from "./Project/Project";
 import Services from "./Services/Services";
 import Skills from "./Skills/Skills";
 import Slider from "./Slider/Slider";
+import Footer from "./Footer/Footer";
 
 document.title = "Prasanth Kumar V";
 
@@ -95,6 +96,10 @@ const PortfolioApp = () => {
           }}
         >
           <Contact />
+        </div>
+
+        <div>
+          <Footer/>
         </div>
       </div>
     </>
