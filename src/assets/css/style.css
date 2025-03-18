@@ -35,15 +35,11 @@
   background: #fff;
 }
 
-.bg-body-tertiary {
-  background-color: #000000 !important;
-}
-
 p,
 li,
 div {
   font-family: "Anek Devanagari", sans-serif;
-  color: white;
+  color: #0e2431;
 }
 
 h1,
@@ -53,19 +49,20 @@ h4,
 h5,
 h6 {
   font-family: "Anek Devanagari", sans-serif;
-  color: white;
+  color: #0e2431;
   font-weight: bold;
 }
 
 li {
-  font-size: 18px;
-  color: white;
+  font-size: 16px;
+  color: #0e2431;
 }
 
 p {
   font-size: 16px;
   line-height: 26px;
-  color: white;
+  color: #0e2431;
+  font-weight: 500;
 }
 
 .pt-6 {
@@ -94,10 +91,16 @@ p {
   }
 }
 
-.my_button {
-  padding: 10px 40px;
+.my-button {
+  padding: 13px 40px 10px 40px;;
   border: none;
-  background: #657b81bf;
+  background: #5171f1;
+  color: white;
+  border-radius: 22px;
+}
+
+.my-button-text {
+  margin-top: 2px;
 }
 
 input:-webkit-autofill {
@@ -108,13 +111,12 @@ input:-webkit-autofill {
 }
 
 .containerDiv2 {
-  background-color: #000000 !important;
+  background-color: #f8f8f8 !important;
   width: 100%;
   max-width: fit-content;
 }
 
 .containerDiv1 {
-  background-color: #222121 !important;
   width: 100%;
   max-width: fit-content;
 }
@@ -124,7 +126,7 @@ input:-webkit-autofill {
 }
 
 .px-6 {
-  padding: 3rem 6rem !important;
+  padding: 6rem 6rem !important;
 }
 
 .px-7 {
@@ -132,6 +134,15 @@ input:-webkit-autofill {
 }
 
 .list-styles {
-  color: #c0c0c0;
+  /* color: #c0c0c0; */
   padding: 0rem 1rem;
+}
+
+.miui-icon-styles {
+  width: 2rem !important;
+  height: auto !important;
+}
+
+.text-justify{
+  text-align: justify;
 }

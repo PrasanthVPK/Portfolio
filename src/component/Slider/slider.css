@@ -13,12 +13,27 @@
   position: relative;
 }
 
-.taglineStyles {
-  font-size: 26px;
+.slider-text-one {
+  color: #ffffff;
+  font-size: 60px;
+}
+
+.slider-text-two {
+  color: #ffffff;
+  font-size: 50px;
+}
+
+.slider-text-three {
+  color: #ffffff;
+  font-weight: unset;
+  font-size: 30px;
+}
+
+.slider-text-name {
+  color: #5171f1;
 }
 
 @media (max-width: 768px) {
-
   /* Styles for small screens */
   .backgroundImageStyles {
     padding: 0px 20px;

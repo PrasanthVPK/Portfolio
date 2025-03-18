@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useEffect, useState } from "react";
 import { work_experience } from "../mock";
 import "./experience.css";
 
@@ -15,69 +15,75 @@ const Experience = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleDetails = (role: string) => {
-    setSelectedRole((prevRole: any) => (prevRole === role ? null : role));
-  };
-
   return (
     <div className="experience-section">
-      <h1 className="mb-5 mt-2">Work Experience</h1>
+      <h1 className="mb-0 mb-lg-5 mb-md-3 mt-5 text-center experience-heading">
+        Work Experience
+      </h1>
 
-      <div className="d-lg-flex flex-row justify-content-between mb-2">
+      <div className="d-flex flex-wrap justify-content-center">
         {work_experience.map((value, index) => (
-          <>
-            <div
-              key={index}
-              className={`align-items-center col-lg-3 card me-lg-4 p-3 mb-4 ${
-                !isMobile && "my_card"
-              } ${selectedRole !== "" ? " d-none" : "d-flex"}`}
-              data-aos="fade-up"
-              data-aos-delay={index * 200}
-            >
-              <img
-                className="card-img-top"
-                style={{ width: 100, height: 100, margin: 20 }}
-                src={value.img}
-                alt="Card cap"
-              />
-              <div className="p-0 pt-3 pb-3 card-body">
-                <h5 className="card-title title-styles m-0">{value.role}</h5>
-              </div>
-              <p className="p-0 m-0 list-group-item list-styles">
-                {value.company_name}
-              </p>
-              <p className="p-0 m-0 list-group-item list-styles">{value.location}</p>
-              <p className="p-0 m-0 list-group-item list-styles">{value.duration}</p>
-              <div className="card-body">
-                <button
-                  className="my_button"
-                  onClick={() => handleDetails(value.role)}
-                >
-                  Read More...
-                </button>
-              </div>
+          <div
+            key={index}
+            data-aos="fade-up"
+            data-aos-delay={index * 200}
+            className="d-flex flex-column flex-lg-row align-items-center align-items-lg-start col-lg-6 col-md-6 col-sm-6 p-3"
+          >
+            <div className="number-div me-0 me-lg-4 col-2 p-4 p-lg-0">
+              {value.img}
             </div>
 
-            {selectedRole === value.role && (
-              <div
-                className="details-container"
-                data-aos="fade-up"
-                data-aos-delay={index * 200}
-              >
-                <h4>{value.company_name}</h4>
-                <h5>{value.role}</h5>
-                <p>{value.duration}</p>
-                <p>{value.description}</p>
-                <button
-                  className="my_button"
-                  onClick={() => setSelectedRole("")}
-                >
-                  Return
-                </button>
-              </div>
-            )}
-          </>
+            <div className="me-0 me-lg-3">
+              <h3 className="role-styles mb-2 text-center text-lg-start">
+                {value.role}
+              </h3>
+              <h4 className="mb-2 text-center text-lg-start">
+                {value.company_name}
+              </h4>
+              <p className="mb-2 text-center text-lg-start">{value.duration}</p>
+
+              <p className="text-justify">{value.description}</p>
+            </div>
+          </div>
         ))}
+
+        {/* <div className="d-flex col-lg-6 col-md-6 col-sm-6  p-3">
+          <div className="number-div me-3">
+            <h1 className="m-0 p-0 number-text">1</h1>
+          </div>
+
+          <div className="me-3">
+            <h2 className="role-styles m-0">Role</h2>
+            <h4 className="m-0">Company Name</h4>
+            <p className="m-0">Duration</p>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Asperiores quasi laudantium ullam tempora voluptas. Ipsum iure,
+              provident repellat porro nisi illum? Quasi, maiores rem.
+              Voluptates, facere? Vero vitae enim rerum?
+            </p>
+          </div>
+        </div>
+
+        <div className="d-flex col-lg-6 col-md-6 col-sm-6  p-3">
+          <div className="number-div me-3">
+            <h1 className="m-0 p-0 number-text">1</h1>
+          </div>
+
+          <div className="me-3">
+            <h2 className="role-styles m-0">Role</h2>
+            <h4 className="m-0">Company Name</h4>
+            <p className="m-0">Duration</p>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Asperiores quasi laudantium ullam tempora voluptas. Ipsum iure,
+              provident repellat porro nisi illum? Quasi, maiores rem.
+              Voluptates, facere? Vero vitae enim rerum?
+            </p>
+          </div>
+        </div> */}
       </div>
     </div>
   );

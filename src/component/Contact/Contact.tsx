@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import "./contact.css";
-import { contact_links } from "../mock";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { contact_links } from "../mock";
+import "./contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -69,15 +69,26 @@ const Contact = () => {
 
       <div className="d-lg-flex">
         <div className="col-lg-6 m-0 mb-4">
-          <h1>Contact me!</h1>
+          <h1 className="mb-4 col-lg-6">
+            Let’s <span style={{ color: "#5171F1" }}>Connect</span> and create
+            something impactful!
+          </h1>
 
           <div className="d-flex align-items-center p-3">
-            <FontAwesomeIcon icon={faPhone} className="fs-4" />
+            <FontAwesomeIcon
+              icon={faPhone}
+              className="fs-4"
+              style={{ color: "#5171F1" }}
+            />
             <p className="ms-3 mb-0">+91 77083 50638</p>
           </div>
 
           <div className="d-flex align-items-center p-3">
-            <FontAwesomeIcon icon={faEnvelope} className="fs-4" />
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              className="fs-4"
+              style={{ color: "#5171F1" }}
+            />
             <p className="ms-3 mb-0">prasanthkumarv02@gmail.com</p>
           </div>
 
@@ -99,9 +110,9 @@ const Contact = () => {
             <button
               type="button"
               onClick={handleDownload}
-              className="my_button"
+              className="my-button"
             >
-              <p className="text-black m-0 p-0">Resume</p>
+              Resume Download
             </button>
           </div>
         </div>
@@ -138,7 +149,7 @@ const Contact = () => {
               />
             </div>
 
-            <button type="submit" className="my_button" disabled={loading}>
+            <button type="submit" className="my-button" disabled={loading}>
               {loading ? "Sending..." : "Submit"}
             </button>
           </form>

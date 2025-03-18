@@ -1,0 +1,42 @@
+.card {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 16px, rgba(0, 0, 0, 0.08) 0px 4px 2px;
+  border-radius: 15px !important;
+  border: none;
+  transition: all 0.4s ease;
+  flex: unset !important;
+  width: 25rem;
+  margin-bottom: 2rem;
+  cursor: default;
+}
+
+.card-group {
+  transition: all 0.4s ease;
+}
+
+.icon-div {
+  background-color: #ced8ff;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 25%;
+}
+
+.card:hover {
+  background: #d7dfff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.card:hover .icon-div {
+  background-color: white;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 25%;
+}
+
+.card-text {
+  font-size: 18px;
+}
+
+.service-heading {
+  font-size: 32px !important;
+  color: #5171f1;
+}
