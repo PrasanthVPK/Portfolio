@@ -1,17 +1,74 @@
 .logoStyles {
-    color: #C7AE6A !important;
+  color: #c7ae6a !important;
 }
 
 .menu-icon {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease-in-out;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .rotate-icon {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
-.navDiv{
-    border-bottom: 1px solid #2c2c2c;
+.navDiv {
+  /* border-bottom: 1px solid #2c2c2c; */
+  position: fixed;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 998;
+  transition: all 0.3s ease;
+  font-family: "Ubuntu", sans-serif;
+  background-color: unset !important;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.navDiv1 {
+  border-bottom: 1px solid#e5e5e5;
+  position: fixed;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 998;
+  transition: all 0.3sease;
+  font-family: "Ubuntu", sans-serif;
+  background-color: white !important;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: #5171F1
+}
+
+.sidebarMob {
+  width: 70%;
+  height: 100vh;
+  background: #000000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.menu_text_style {
+  cursor: pointer;
+  color: #c0c0c0;
+  font-weight: 700;
+}
+
+.menu_text_style1 {
+  cursor: pointer;
+  color: black;
+  font-weight: 700;
+}
+
+.mobile_menu_text {
+  color: #c0c0c0;
+}
+
+.mobile_menu {
+  padding: 0;
+  list-style-type: none;
 }

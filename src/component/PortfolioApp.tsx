@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
-import Navbar from "./Navbar/Navbar";
-import Slider from "./Slider/Slider";
+import { useEffect, useState } from "react";
 import About from "./About/About";
-import Experience from "./Experience/Experience";
 import Contact from "./Contact/Contact";
+import Experience from "./Experience/Experience";
+import Navbar from "./Navbar/Navbar";
 import Project from "./Project/Project";
+import Services from "./Services/Services";
+import Skills from "./Skills/Skills";
+import Slider from "./Slider/Slider";
 
 document.title = "Prasanth Kumar V";
 
@@ -45,6 +47,27 @@ const PortfolioApp = () => {
           <About />
         </div>
         <div
+          id="skills-section"
+          className={`d-flex flex-column justify-content-start pt-5 pb-5 ${
+            isMobile ? "px-4" : "px-6"
+          } containerDiv1`}
+        >
+          <Skills />
+        </div>
+
+        <div
+          id="service-section"
+          className={`d-flex flex-column justify-content-start pt-5 pb-5 ${
+            isMobile ? "px-4" : "px-6"
+          } containerDiv2`}
+          style={{
+            maxWidth: "none",
+          }}
+        >
+          <Services />
+        </div>
+
+        <div
           id="exp-section"
           className={`d-flex flex-column justify-content-start pt-5 pb-5 ${
             isMobile ? "px-4" : "px-6"
@@ -57,8 +80,8 @@ const PortfolioApp = () => {
           id="portfolio-section"
           className={`d-flex flex-column justify-content-start pt-5 pb-5 ${
             isMobile ? "px-4" : "px-6"
-          } containerDiv2`}
-          style={{ maxWidth: "none" }}
+          } `}
+          style={{ maxWidth: "none", backgroundColor: "#ececec" }}
         >
           <Project />
         </div>

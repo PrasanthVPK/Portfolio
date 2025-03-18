@@ -1,30 +1,16 @@
-import React, { useEffect, useState } from "react";
 import "./slider.css";
 
 const Slider = () => {
-  const [componentHeight, setComponentHeight] = useState(
-    window.innerHeight - 94,
-  );
-
-
-  useEffect(() => {
-    const handleResize = () => {
-      setComponentHeight(window.innerHeight - 94);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
     <>
-      <div className="backgroundImageStyles sm-backgroundImageStylesSM" style={{ height: componentHeight }}>
+      <div className="backgroundImageStyles sm-backgroundImageStylesSM">
         <div>
-          <h1>
-            I'm <strong>Prasanth Kumar</strong>
+          <h1 className="slider-text-one">Hi there!</h1>
+          <h1 className="slider-text-two">
+            I'm <strong className="slider-text-name">Prasanth Kumar</strong>
           </h1>
-          <h2 className="taglineStyles">A Dedicated Software Engineer</h2>
+
+          <h2 className="slider-text-three">Front-End Developer</h2>
         </div>
       </div>
     </>

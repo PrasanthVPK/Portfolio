@@ -1,5 +1,5 @@
 .aboutImageStyles {
-  height: 450px;
+  height: 340px;
 }
 
 .aboutContentHei{
@@ -8,25 +8,29 @@
 
 @media only screen and (max-width: 600px) {
   .aboutImageStyles {
-    height: 400px;
+    height: 300px;
   }
 
   .aboutDescription {
     font-size: 16px !important;
     line-height: 26px !important;
   }
+
+  .hexagon {
+    height: 130px !important;
+  }
 }
 
 .aboutDescription {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 26px;
 }
 
 .hexagon {
-  height: 200px;
+  height: 150px;
   aspect-ratio: cos(30deg);
   clip-path: polygon(-100% 50%, 50% 163%, 198% 50%, 100% -191%);
-  background: #00f2ff;
+  /* background: #00f2ff; */
   position: relative;
   display: flex;
   align-items: center;
@@ -35,7 +39,7 @@
   border-top-left-radius: 75%;
 }
 
-.nav-link {
+/* .nav-link {
   display: block;
   padding: 15px 40px;
   font-size: var(--bs-nav-link-font-size);
@@ -47,7 +51,7 @@
   transition: color 0.15sease-in-out, background-color 0.15sease-in-out,
     border-color 0.15sease-in-out;
   border-bottom: 2px solid black;
-}
+} */
 
 .nav-link_selected {
   display: block;
@@ -63,7 +67,7 @@
   border-bottom: 2px solid black;
   background-color: #000000;
   background-image: linear-gradient(180deg, #000000 40%, #434343 125%);
-  border-bottom: 2px solid dimgray;
+  /* border-bottom: 2px solid dimgray; */
 }
 
 .nav_bar_style:hover {
@@ -74,6 +78,6 @@
 
 @media (max-width: 768px) {
   .photo_height {
-    height: 400px;
+    height: 340px;
   }
 }
