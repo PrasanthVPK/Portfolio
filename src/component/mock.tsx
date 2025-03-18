@@ -1,24 +1,23 @@
-import React, { JSX } from "react";
 import {
-  faFacebook,
-  faInstagram,
-  faLinkedin,
-  faXTwitter,
-  faReact,
-  faJs,
-  faGithub,
-  faCss,
-  faHtml5,
   faBootstrap,
+  faCss,
+  faFacebook,
+  faGithub,
+  faHtml5,
+  faInstagram,
+  faJs,
+  faLinkedin,
+  faReact,
+  faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FaCodeBranch, FaTachometerAlt } from "react-icons/fa";
+import CodeIcon from "@mui/icons-material/Code";
+import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import SpeedIcon from "@mui/icons-material/Speed";
 import WebIcon from "@mui/icons-material/Web";
-import DesignServicesIcon from "@mui/icons-material/DesignServices";
-import CodeIcon from "@mui/icons-material/Code";
+import { JSX } from "react";
+import { FaCodeBranch } from "react-icons/fa";
 import { SiRedux } from "react-icons/si";
-import { faCode, faCodeBranch } from "@fortawesome/free-solid-svg-icons";
 
 export const personal_info = [
   {

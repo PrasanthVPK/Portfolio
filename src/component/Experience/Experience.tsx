@@ -1,18 +1,12 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { work_experience } from "../mock";
 import "./experience.css";
 
 const Experience = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const [selectedRole, setSelectedRole] = useState<any>("");
-
   useEffect(() => {
     AOS.init({ duration: 600, once: true });
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
