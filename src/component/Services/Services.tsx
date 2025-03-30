@@ -8,7 +8,7 @@ const Services = () => {
 
       <div className="d-flex justify-content-lg-evenly justify-content-center flex-wrap">
         {service_info.map((values, index) => (
-          <div key={index} className="card swiper-slide col-8 m-4">
+          <div key={index} className="card swiper-slide col-lg-5 col-xl-3 col-md-9 col-sm-8 m-4">
             <div className="image-content">
               <span className="overlay"></span>
               <div className="card-image d-flex align-items-center justify-content-center">

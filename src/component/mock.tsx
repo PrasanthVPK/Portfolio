@@ -18,6 +18,7 @@ import WebIcon from "@mui/icons-material/Web";
 import { JSX } from "react";
 import { FaCodeBranch } from "react-icons/fa";
 import { SiRedux } from "react-icons/si";
+import { TbBrandReactNative } from "react-icons/tb";
 
 export const personal_info = [
   {
@@ -68,6 +69,10 @@ export const skills_info = [
   {
     name: "Bootstrap",
     icon: <FontAwesomeIcon icon={faBootstrap} style={{ color: "#B197FC" }} />,
+  },
+  {
+    name: "React Native Expo",
+    icon: <TbBrandReactNative style={{ color: "#74C0FC" }} />,
   },
 ];
 
@@ -179,34 +184,13 @@ export const service_inform = {
   ],
 };
 
-const myData = {
-  plan_id: 12,
-  end_subscription: "2025-07-12T11:04:33Z",
-  remainder: "Plan will expire in 110 days",
-  plan_exp: {
-    days: 110,
-    hours: 23,
-    minutes: 19,
-    seconds: 8,
-  },
-  addons_feature: {
-    carry: [
-      "Your Add-on Job Posting Credits count is 5 to use until it reaches 0",
-      "Your Add-on AI Resume Parsing Credits count is 100 to use until it reaches 0",
-      "Your Add-on Resume Unlock count is 20 to use until it reaches 0",
-    ],
-    notcarry: [],
-    remaining_days: null,
-  },
-};
-
 export const work_experience = [
   {
     id: 1,
     company_name: "Sense7ai Data Solution Pvt Ltd",
     role: "Jr. Software Engineer",
     location: "Coimbatore, Tamil Nadu",
-    duration: "Feb 2024 – March 2025",
+    duration: "April 2023 – March 2025",
     img: (
       <img
         src="/assets/images/softwareeng.webp"
@@ -219,23 +203,6 @@ export const work_experience = [
   },
   {
     id: 2,
-    company_name: "Sense7ai Data Solution Pvt Ltd",
-    role: "Front-end Developer",
-    location: "Coimbatore, Tamil Nadu",
-    duration: "April 2023 – Jan 2024",
-    img: (
-      <img
-        src="/assets/images/programming.webp"
-        style={{ width: "100px", height: "100px" }}
-        alt=""
-      />
-    ),
-
-    description:
-      "Handled assembly line installation, SMT machine procurement, vendor coordination, and material management for LED backlight modules and instrument clusters. Worked on machine panel wiring, PCB assembly, and process optimization in electronics manufacturing.",
-  },
-  {
-    id: 3,
     company_name: "Pricol Limited",
     role: "Apprentice - Process Engineer",
     location: "Coimbatore, Tamil Nadu",
@@ -344,19 +311,19 @@ export const nav_menu = [
     onClick: handleScrollToService,
   },
   {
-    id: 4,
+    id: 5,
     nav_name: "Experience",
     nav_link: "#",
     onClick: handleScrollToExp,
   },
   {
-    id: 5,
+    id: 6,
     nav_name: "Projects",
     nav_link: "#",
     onClick: handleScrollToPortfolio,
   },
   {
-    id: 6,
+    id: 7,
     nav_name: "Contact",
     nav_link: "#",
     onClick: handleScrollToContact,

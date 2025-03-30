@@ -47,8 +47,6 @@ const Navbar = () => {
     };
   }, []);
 
-  console.log(window.scrollY);
-
   return (
     <>
       <nav
@@ -56,7 +54,7 @@ const Navbar = () => {
       >
         <div className="container-fluid px-5">
           <p className="navbar-brand m-0">
-            <h2 className="logoStyles m-0">
+            <span className="logoStyles m-0">
               <img
                 src={`/assets/images/${image}`}
                 alt=""
@@ -64,7 +62,7 @@ const Navbar = () => {
                   width: "40px",
                 }}
               />
-            </h2>
+            </span>
           </p>
 
           <div
