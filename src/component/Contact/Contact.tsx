@@ -68,6 +68,7 @@ const Contact = () => {
       <ToastContainer position="top-right" autoClose={3000} />
 
       <div className="d-lg-flex">
+        <div></div>
         <div className="col-lg-6 m-0 mb-4">
           <h1 className="mb-4 col-lg-6">
             Let’s <span style={{ color: "#5171F1" }}>Connect</span> and create

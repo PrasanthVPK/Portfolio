@@ -36,6 +36,7 @@ const Skills = () => {
       <div className=" d-flex flex-column flex-lg-row flex-lg-wrap justify-content-center">
         {skills_info.map((skill, index) => (
           <div
+          key={index}
             className={`${isMobile && "mb-5"} ${
               !isMobile && " m-4"
             } d-flex justify-content-center`}

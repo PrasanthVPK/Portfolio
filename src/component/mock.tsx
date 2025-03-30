@@ -18,6 +18,7 @@ import WebIcon from "@mui/icons-material/Web";
 import { JSX } from "react";
 import { FaCodeBranch } from "react-icons/fa";
 import { SiRedux } from "react-icons/si";
+import { TbBrandReactNative } from "react-icons/tb";
 
 export const personal_info = [
   {
@@ -68,6 +69,10 @@ export const skills_info = [
   {
     name: "Bootstrap",
     icon: <FontAwesomeIcon icon={faBootstrap} style={{ color: "#B197FC" }} />,
+  },
+  {
+    name: "React Native Expo",
+    icon: <TbBrandReactNative style={{ color: "#74C0FC" }} />,
   },
 ];
 
@@ -127,13 +132,65 @@ export const service_info = [
   },
 ];
 
+export const service_inform = {
+  row1: [
+    {
+      id: 1,
+      service_name: "Front-end Development",
+      service_desc:
+        " I build dynamic, responsive, and optimized UIs using React, Next.js, TypeScript, and CSS, ensuring seamless user experiences.",
+      service_icon: <CodeIcon className="miui-icon-styles" />,
+    },
+    {
+      id: 2,
+      service_name: "Web Development",
+      service_desc:
+        "I develop scalable, SEO-friendly web applications with React, Next.js, JavaScript, and API integrations, focusing on performance and deployment.",
+      service_icon: <WebIcon className="miui-icon-styles" />,
+    },
+    {
+      id: 3,
+      service_name: "UI/UX Designing",
+      service_desc:
+        "I craft pixel-perfect, accessible, and interactive web interfaces using HTML, CSS, Tailwind, and JavaScript frameworks to enhance user experience.",
+      service_icon: <DesignServicesIcon className="miui-icon-styles" />,
+    },
+  ],
+
+  row2: [
+    {
+      id: 4,
+      service_name: "Version Control",
+      service_desc:
+        "I efficiently manage and collaborate on code using Git and GitHub, ensuring smooth development workflows and secure version control.",
+      service_icon: (
+        <FaCodeBranch className="miui-icon-styles" />
+      ) as JSX.Element,
+    },
+    {
+      id: 5,
+      service_name: "State Management",
+      service_desc:
+        "I manage application state efficiently using Redux, Redux Toolkit, and React Context API, ensuring smooth data flow and enhanced performance.",
+      service_icon: (<SiRedux className="miui-icon-styles" />) as JSX.Element,
+    },
+    {
+      id: 6,
+      service_name: "Performance Optimization",
+      service_desc:
+        "I optimize web applications for speed and efficiency by implementing lazy loading, code splitting, caching, and best practices for performance tuning.",
+      service_icon: <SpeedIcon className="miui-icon-styles" />,
+    },
+  ],
+};
+
 export const work_experience = [
   {
     id: 1,
     company_name: "Sense7ai Data Solution Pvt Ltd",
     role: "Jr. Software Engineer",
     location: "Coimbatore, Tamil Nadu",
-    duration: "Feb 2024 – Present",
+    duration: "April 2023 – March 2025",
     img: (
       <img
         src="/assets/images/softwareeng.webp"
@@ -146,23 +203,6 @@ export const work_experience = [
   },
   {
     id: 2,
-    company_name: "Sense7ai Data Solution Pvt Ltd",
-    role: "Front-end Developer",
-    location: "Coimbatore, Tamil Nadu",
-    duration: "June 2023 – Jan 2024",
-    img: (
-      <img
-        src="/assets/images/programming.webp"
-        style={{ width: "100px", height: "100px" }}
-        alt=""
-      />
-    ),
-
-    description:
-      "Handled assembly line installation, SMT machine procurement, vendor coordination, and material management for LED backlight modules and instrument clusters. Worked on machine panel wiring, PCB assembly, and process optimization in electronics manufacturing.",
-  },
-  {
-    id: 3,
     company_name: "Pricol Limited",
     role: "Apprentice - Process Engineer",
     location: "Coimbatore, Tamil Nadu",
@@ -271,19 +311,19 @@ export const nav_menu = [
     onClick: handleScrollToService,
   },
   {
-    id: 4,
+    id: 5,
     nav_name: "Experience",
     nav_link: "#",
     onClick: handleScrollToExp,
   },
   {
-    id: 5,
+    id: 6,
     nav_name: "Projects",
     nav_link: "#",
     onClick: handleScrollToPortfolio,
   },
   {
-    id: 6,
+    id: 7,
     nav_name: "Contact",
     nav_link: "#",
     onClick: handleScrollToContact,
