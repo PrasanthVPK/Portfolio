@@ -6,15 +6,17 @@ const Services = () => {
     <>
       <h2 className="mb-5 text-center service-heading">Services & Expertise</h2>
 
-      <div className="d-flex justify-content-lg-between justify-content-center flex-wrap">
+      <div className="d-flex justify-content-lg-evenly justify-content-center flex-wrap">
         {service_info.map((values, index) => (
-          <div key={index} className="card col-lg-4 justify-content-center p-4">
-            <div className="d-flex justify-content-center mb-3">
-              <span className="text-center d-flex justify-content-center icon-div">
+          <div key={index} className="card swiper-slide col-8 m-4">
+            <div className="image-content">
+              <span className="overlay"></span>
+              <div className="card-image d-flex align-items-center justify-content-center">
                 {values.service_icon}
-              </span>
+              </div>
             </div>
-            <div className="card-body p-0">
+
+            <div className="card-content">
               <h5 className="card-title text-center">{values.service_name}</h5>
               <p className="card-text text-center">{values.service_desc}</p>
             </div>
