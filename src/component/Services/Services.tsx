@@ -5,7 +5,7 @@ import { service_info } from "../mock";
 import "./service.css";
 
 const Services = () => {
-  const [chunkSize, setChunkSize] = useState(3);
+  // const [chunkSize, setChunkSize] = useState(3);
   const [groupedServices, setGroupedServices] = useState<any[][]>([]);
 
   const getChunkSize = (width: number) => {
@@ -19,20 +19,17 @@ const Services = () => {
       arr.slice(i * size, i * size + size)
     );
 
-  const handleResize = () => {
-    const newSize = getChunkSize(window.innerWidth);
-    setChunkSize(newSize);
-    setGroupedServices(chunkArray(service_info, newSize));
-  };
-
   useEffect(() => {
+    const handleResize = () => {
+      const newSize = getChunkSize(window.innerWidth);
+      setGroupedServices(chunkArray(service_info, newSize));
+    };
+
     handleResize();
     window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [chunkSize]);
 
   return (
     <>
