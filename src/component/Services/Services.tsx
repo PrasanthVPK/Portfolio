@@ -32,7 +32,7 @@ const Services = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  });
+  }, [chunkSize]);
 
   return (
     <>
