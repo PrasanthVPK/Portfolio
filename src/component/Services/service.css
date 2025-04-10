@@ -1,10 +1,9 @@
 .card {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 16px, rgba(0, 0, 0, 0.08) 0px 4px 2px;
-  border-radius: 15px !important;
+  border-radius: 25px !important;
   border: none;
   transition: all 0.4s ease;
   flex: unset !important;
-  /* width: 20rem; */
   margin-bottom: 2rem;
   cursor: default;
 }
